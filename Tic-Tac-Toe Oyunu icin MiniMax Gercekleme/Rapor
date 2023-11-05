@@ -1,0 +1,37 @@
+Bu rapor, Python'un tkinter kütüphanesi kullanılarak oluşturulan basit bir Tic-Tac-Toe oyununu kapsamaktadır.
+Oyun, iki oyunculu klasik bir strateji oyunu olan Tic-Tac-Toe'nun bilgisayara karşı oynanan bir versiyonudur.
+
+Oyun Mekaniği
+Oyun, 3x3'lük bir kare ızgarada oynanır. İki oyuncudan biri "X", diğeri "O" işaretlerini kullanır. 
+Oyunun amacı, sırasıyla işaretlerini yatay, dikey veya çapraz olarak sıralamak olan iki oyuncu arasında
+gerçekleşir. Bu oyun, kullanıcıya "O" işareti verirken, bilgisayar "X" işareti ile oynamaktadır.
+
+Algoritma
+Oyunun yapay zeka kısmı, her iki oyuncu için en iyi hamleleri belirlemek üzere tasarlanmış minimax 
+algoritması kullanmaktadır. Minimax, oyun teorisinde tam bilgiye sahip iki rakip oyuncu arasındaki 
+oyunlar için bir karar kuralları algoritmasıdır. Bu oyun için algoritma, bilgisayarın hamlelerini 
+yönetir ve her zaman en iyi hamleyi seçmeye çalışır.
+
+Kodun Yapısı
+İthalatlar
+Kod, tkinter ve messagebox modüllerini içe aktararak başlar. Bu, kullanıcı arayüzünü oluşturmak ve 
+kullanıcıya bilgi vermek için gereklidir.
+
+Oyun Tahtası
+Oyunun durumu, 3x3'lük bir liste listesi olarak temsil edilir ve her hücre başlangıçta boş bir string
+(" ") ile doldurulur.
+
+Fonksiyonlar
+is_winner: Belirli bir oyuncunun kazanıp kazanmadığını kontrol eder.
+get_possible_moves: Boş hücrelerin konumlarını döndürür.
+minimax: Oyunun mevcut durumu için en iyi hamleyi ve skoru hesaplar.
+on_click: Kullanıcının hamlesini işler ve bilgisayarın hamlesini tetikler.
+reset_board: Oyun tahtasını ve butonları başlangıç durumuna sıfırlar.
+GUI
+Tkinter penceresi oluşturulur ve başlığa "Tic-Tac-Toe" atanır.
+Butonlar, oyun tahtası hücrelerini temsil eder ve bir grid yapısına yerleştirilir.
+Her buton, on_click fonksiyonunu kendi koordinatları ile çağıracak şekilde ayarlanır.
+Sonuç
+Bu kod, kullanıcıların "O" olarak oynayabileceği ve bilgisayarın "X" olarak yanıt vereceği etkileşimli bir
+Tic-Tac-Toe oyunu sağlar. Oyun, bir oyuncu üçlü bir sıra oluşturana veya tüm hücreler dolana kadar devam
+eder. Oyun sona erdiğinde, kazanan hakkında bir mesaj gösterilir ve tahta sıfırlanır.
